@@ -12,7 +12,7 @@ export const buildSearchResults = (resultArray) => {
     const resultItem = createResultItem(result);
     const resultContents = document.createElement("div");
     resultContents.classList.add("resultContents");
-    if (result.img) {
+    if (result.image) {
       const resultImage = createResultImage(result);
       resultContents.append(resultImage);
     }
@@ -33,7 +33,7 @@ const createResultItem = (result) => {
   link.href = `https://en.wikipedia.org/?curid=${result.id}`;
   link.textContent = result.title;
   link.target = "_blank";
-  resultTitle.append(link);j
+  resultTitle.append(link);
   resultItem.append(resultTitle);
   return resultItem;
 };
@@ -42,7 +42,7 @@ const createResultImage = (result) => {
   const resultImage = document.createElement("div");
   resultImage.classList.add("resultImage");
   const img = document.createElement("img");
-  img.src = result.img;
+  img.src = result.image;
   img.alt = result.title;
   resultImage.append(img);
   return resultImage;
